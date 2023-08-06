@@ -80,7 +80,7 @@ const BillboardForm: FC<BillboardFormProps> = ({
       setLoading(true)
       await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`)
       router.refresh();
-      router.push("/")
+      router.push(`/${params.storeId}/billboards`)
       toast.success("Billboard successfully deleted")
     } catch (error) {
       toast.error("make sure you removed all categories using this billboard.")
@@ -155,7 +155,6 @@ const BillboardForm: FC<BillboardFormProps> = ({
           </Button>
         </form>
       </Form>
-      <Separator />
     </>
   )
 }
